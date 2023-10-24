@@ -32,12 +32,21 @@ const multiply = function(multiplyArray) {
   };
 };
 
-const power = function() {
-	
+const power = function(base, exponent) {
+	powerValue = base ** exponent;
+  return powerValue;
 };
 
-const factorial = function() {
-	
+const factorial = function(factorNum) {
+  let factorValue = 1;
+  if (factorNum == 0 || factorNum == 1) {
+    return factorValue;
+  } else {
+    for (i = 0; i < factorNum; i++) {
+      factorValue = factorValue * (i + 1);
+    };
+    return factorValue;
+  };
 };
 
 // Do not edit below this line
