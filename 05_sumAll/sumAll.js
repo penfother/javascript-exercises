@@ -11,7 +11,7 @@ const sumAll = function(startNum, endNum) {
         let sum = startingNum;
         let counterNum = startingNum;
         for (let i = 0; i < endingNum - startingNum; i++) {
-            counterNum += 1;
+            counterNum++;
             sum += counterNum;
 //        };
     };
