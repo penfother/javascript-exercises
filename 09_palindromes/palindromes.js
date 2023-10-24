@@ -1,9 +1,7 @@
 const palindromes = function (testPalindromString) {
     
-    //removes punctuation, uppercase letters
-    let noShitString = testPalindromString.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
-    noShitString = noShitString.toLowerCase();
-
+    //removes punctuation, uppercase letters, numbers
+    let noShitString = testPalindromString.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()1234567890]/g,"").toLowerCase();
 
     let backwardsArray = [];
     let backPointer = noShitString.length;
@@ -14,11 +12,10 @@ const palindromes = function (testPalindromString) {
         backwardsArray[i] = noShitString.slice(backPointer, backPointer + 1);
     };
 
-    //assembles backwardsarray into string
+    //removes spaces from backwardsArray
+
+    //assembles backwardsArray into string WITHOUT SPACES INBETWEEN WORDS
     testArray = backwardsArray.join("");
-
-    //removes punctuation 
-
 
     //tests if the starting string is the same as the newly assembled one
     if (testArray == noShitString) {
