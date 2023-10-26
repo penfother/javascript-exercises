@@ -33,15 +33,19 @@ const caesar = function(letters, num) {
 
 //checks for uppercase and lowercase letters in input phrase
     for (let i = 0; i < upperLowerArray.length; i++) {
-        if (upperLowerArray[i] == upperLowerArray[i].toLowerCase()) {
+        if (upperLowerArray[i] == " " || upperLowerArray[i] == "," || upperLowerArray[i] == "!") {
+            cypher[i] = lettersArray[i];
+        } else if (upperLowerArray[i] == upperLowerArray[i].toLowerCase()) {
             cypher[i] = cypher[i].toLowerCase();
         };
     };
 
 
 //returns finished cypher
-    return cypher;
+    let finishedCypher = "";
 
+    finishedCypher = cypher.join("");
+    return finishedCypher;
     //added for debugging
     //return letters;
 };
