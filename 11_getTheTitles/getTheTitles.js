@@ -1,5 +1,5 @@
-const getTheTitles = function() {
-
+const getTheTitles = function(searchedTitle) {
+    
 };
 
 // Do not edit below this line
