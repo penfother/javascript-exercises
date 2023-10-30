@@ -5,10 +5,19 @@ const caesar = function(letters, num) {
 
     let cypherArray = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
 
-//creates cypher array depending on the inputed num(number to displace the array for cypher)
-    for (let i = 0; i < num; i++) {
-        straggler = cypherArray.shift();
-        cypherArray.push(straggler);        
+//checks if given num is negative or positive
+    if (num > 0) {
+    //creates cypher array depending on the inputed num(number to displace the array for cypher)- works with positive numbers
+        for (let i = 0; i < num; i++) {
+            straggler = cypherArray.shift();
+            cypherArray.push(straggler);        
+        };
+    } else {
+    //creates cypher array depending on the inputed num(number to displace the array for cypher)- works with negative numbers
+        for (let i = 0; i < -num; i++) {
+            straggler = cypherArray.pop();
+            cypherArray.unshift(straggler);
+        };
     };
 
 //takes the input letters and disassociates them into an array
@@ -31,7 +40,7 @@ const caesar = function(letters, num) {
         };
     };
 
-//checks for uppercase and lowercase letters in input phrase
+//checks for uppercase, lowercase letters and common diacritic signs in input phrase
     for (let i = 0; i < upperLowerArray.length; i++) {
         if (upperLowerArray[i] == " " || upperLowerArray[i] == "," || upperLowerArray[i] == "!") {
             cypher[i] = lettersArray[i];
